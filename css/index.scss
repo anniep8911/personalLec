@@ -132,7 +132,7 @@ div.mnWrap .texts{
     direction: ltr;
 }
 div.mnWrap h2{
-    font-size: max(min(25px), 1.4vw);
+    font-size: max(min(25px), 1.3vw);
     line-height: 6vw;
     text-transform: capitalize;
 }
@@ -463,5 +463,237 @@ div.ftrWrap{
         div.html{
             color: transparent;
         }
+    }
+}
+
+$maxTab : 780px;
+$maxMob : 420px;
+
+
+@mixin tab {
+    @media (min-width:0) and (max-width: #{$maxTab}) {
+        @content;
+    }
+}
+
+
+@mixin mob {
+    @media (min-width:0) and (max-width: #{$maxMob}) {
+        @content;
+    }
+}
+
+@include tab{
+    body{
+        overflow-x: hidden;
+    }
+    div.mnWrap{
+        padding: 2vw 0;
+        .imgGroup{
+            width: 450%;
+        }
+        main{
+            display: block;
+            width: 90vw;
+            .imgView{
+                width: 100%;
+                overflow: hidden;
+                .imgGroup{
+                    height: 40vw;
+                   .image{
+                       height: 35vw;
+                       &:nth-of-type(2){
+                           height: 40vw;
+                       }
+                   }
+                   
+                }
+                .ovrGrid{
+                    width: 100%;
+                }
+            }
+            .texts{
+                width: 100%;
+                margin-top: 1vw;
+                h2{
+                    text-align: center;
+                }
+                p{
+                    display: none;
+                }
+            }
+        }
+
+        .btn{
+            .left{
+                opacity: 1;
+            }
+            .right{
+                opacity: 1;
+            }
+                
+        }
+    }
+    div.cnt02 section article:nth-child(even) .ovrGrid{
+        left: 0;
+    }
+    div.cnt02 section article:nth-child(odd) .image .ovrGrid{
+        right: 0;
+    }
+
+    div.cntWrap{
+        margin-top: max(min(30px), 2vw);
+
+    }
+    
+    div.cnt01{
+        section{
+            .artTop{
+                min-height: 0;
+            }
+            .artBtm{
+                min-height: 0;
+            }
+    
+        }
+    }
+
+    footer{
+        width: 90vw;
+    }
+
+}
+
+
+@include mob{
+    div.cnt01{
+        section{
+            display: block;
+            .artTop{
+                display: block;
+                height: 100%;
+                article{
+                    width: 100%;
+                    .image{
+                        min-height: 150px;
+                    }
+                    .texts{
+                        h3{
+                            display: block;
+                            font-size: 12px;
+                        }
+                        h5{
+                            display: block;
+                            font-size: 12px;
+                        }
+                        p{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .artBtm{
+                display: block;
+                height: 100%;
+                article{
+                    width: 100%;
+                    .image{
+                        min-height: 150px;
+                    }
+                    .texts{
+                        h3{
+                            display: block;
+                            font-size: 12px;
+                        }
+                        h5{
+                            display: block;
+                            font-size: 12px;
+                        }
+                        p{
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    div.cnt02{
+        section{
+            display: block;
+            article{
+                display: block;
+                margin-top: 20px;
+                .image{
+                    
+                    width: 100%;
+                    .ovrGrid{   
+                        height: 150px;
+                        border-radius: 0;
+                        width: 100%;
+                        min-width: 100%;
+                    }
+                    
+                }
+                .texts{
+                    top: 0px;
+                    opacity: 1;
+                    width: 100%;
+                    text-align: center;
+                }
+                
+                &:nth-child(odd){
+                    .image{
+                        .ovrGrid{
+                            border-radius: 0;
+                            width: 100%;
+                            min-width: 100%;
+                        }
+                    }
+                    .texts{
+                        top: 0px;
+                        opacity: 1;
+                        width: 100%;
+                        text-align: center;
+                        button{
+                            text-align: center;
+                        }
+                    }   
+                }
+            }
+        }
+    }
+
+
+
+    div.cnt02 section article .texts button{
+        margin: 0 auto;
+    }
+    div.cnt02 section article .texts .txt p{
+        text-align: left;
+    }
+    div.cnt02 section article .texts .txt{
+        height: calc(2vw * 10);
+    }
+    div.cntWrap div.cnt03{
+        display: none;
+    }
+
+    div.ftrWrap footer{
+        display: block;
+    }
+    div.ftrWrap footer div p{
+        height: 100px;
+    }
+    div.ftrWrap footer div{
+        width: 100%;
+    }
+
+    div.mnWrap h2{
+        font-size: 12px;
+        font-weight: 700;
+    }
+    div.mnWrap main{
+        width: 100vw;
     }
 }

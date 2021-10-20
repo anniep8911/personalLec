@@ -97,7 +97,7 @@ $(function(){
         var now =$(this).scrollTop();
 
         for(var i = 0; i <= 6 ; i++){
-            artTop[i]= parseInt(cnt02art.eq(i).offset().top) - 800;
+            artTop[i]= parseInt(cnt02art.eq(i).offset().top) - 500;
 
             if(i % 2 == 0){
                 if(now >= artTop[i] && now <= artTop[i+1]){
