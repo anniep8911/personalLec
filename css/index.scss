@@ -1,0 +1,618 @@
+@import url('all.css');
+@import url('reset.css');
+
+
+@keyframes topTo {
+    0%{
+        background-position: top;
+    }
+    50%{
+        background-position: bottom;
+    }
+    100%{
+        background-position: top;
+    }
+}
+
+@keyframes leftTo {
+    0%{
+        background-position: left;
+    }
+    50%{
+        background-position: right;
+    }
+    100%{
+        background-position: left;
+    }
+}
+
+body{
+    overflow-x: hidden;
+}
+div.hdrWrap header{
+    width: 80vw;
+    // max-width: 1080px;
+    height: 5vw;
+    min-height: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+.logo{
+    width: calc(100% / 12 * 2);
+    height: 2vw;
+    background-color: #ccc;
+    margin-top: 1vw;
+    min-height: 40px;
+}
+div.hdrWrap nav{
+    display: flex;
+}
+div.hdrWrap h2{
+    font-size: max(20px, 1vw);
+    line-height: 5vw;
+    margin-left: 2vw;
+    text-transform: uppercase;
+}
+
+div.mnWrap{
+    background-color: #666;
+    padding: 10vw 0;
+    transition: background-color 0.5s;
+}
+
+div.mnWrap main{
+    width: 80vw;
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    direction: rtl;
+    justify-content: space-between;
+}
+div.mnWrap {
+    position: relative;
+    .imgView{
+        width: 50%;
+        direction:ltr;
+        .image{
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top left;
+            @for $j from 1 through 12{
+                &.i#{$j}{
+                    cursor: pointer;
+                    background-image: url('../image/main_pic0#{$j}.jpg');
+                    color: transparent;
+                }
+    
+            }
+        }
+        .ovrGrid{
+            position: relative;
+           
+        }
+    }
+    .btn{
+        width:100%;
+        padding: 0 10%;
+        display: flex;
+        line-height: calc(2vw * (880 / 40));
+        font-size: 6vw;
+        justify-content: space-between;
+        position: absolute;
+        margin: auto;
+        top: 0;left: 0; bottom: 0;right: 0;
+        opacity: 1;
+        color: rgba(255,255,255,0.8);
+        .left{
+            width: 30%;
+            opacity: 0;
+            transition: opacity 0.5s;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            &:hover{
+                opacity: 1;
+            }
+        }
+        .right{
+            width: 30%;
+            opacity: 0;
+            transition: opacity 0.5s;
+            text-align: right;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+            &:hover{
+                opacity: 1;
+            }
+        }
+    
+    }
+  
+
+}
+div.mnWrap .ovrGrid{
+    width: calc((100vw - 1080px) / 2 + 100%);
+    min-width: calc((100vw - 80vw) / 2 + 100%);
+    overflow: hidden;
+}
+div.mnWrap .imgGroup{
+    width: 400%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 24vw;
+}
+div.mnWrap .image{
+    width: calc(100% / 12 - 20px);
+    height: 20vw;
+    background-color: #fc0;
+    border-radius: 5px;
+    transition: height 0.5s;
+}
+
+div.mnWrap .image:nth-of-type(2){
+    height: 24vw;
+    animation: topTo linear 15s;
+
+    @for $i from 1 through 12{
+        $j : $i % 3 == 0;
+        @if($j){
+            $j : #{$i};
+            &.i#{$j}{
+                animation: leftTo linear 15s;
+            }
+        }
+    }
+
+}
+
+
+
+
+
+div.mnWrap .texts{
+    width: calc(100% / 12 * 5);
+    direction: ltr;
+}
+div.mnWrap h2{
+    font-size: max(min(25px), 1.3vw);
+    line-height: 6vw;
+    text-transform: capitalize;
+}
+div.mnWrap p{
+    font-size: max(min(18px), 1vw);
+    line-height: max(min(30px), 1vw);
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+div.cntWrap{
+    margin-top: max(min(80px),4vw);
+}
+div.cntWrap .content{
+    width: 80vw;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+div.cntWrap header{
+    line-height: max(min(40px), 2vw);
+}
+div.cntWrap h2{
+    font-size: max(min(20px),1.8vw);
+    text-transform: capitalize;
+}
+div.cntWrap section{
+    margin-top: 2vw;
+}
+
+div.cntWrap h3{
+    line-height: max(min(40px),4vw);
+    font-size: max(min(18px),1.5vw);
+    text-transform: capitalize;
+    font-weight: 700;
+}
+div.cntWrap h5{
+    font-weight: 700;
+    line-height: max(min(40px),2vw);
+    font-size: max(min(12px),0.8vw);
+}
+
+
+
+div.cnt01{
+    section{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 2vw;
+        .artTop{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 21.5vw;
+            min-height: 300px;
+        }
+        .artBtm{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            height: 21.5vw;
+            min-height: 300px;
+        }
+        article{
+            width: calc(30% - 20px);
+            transition: width 0.5s;
+            overflow: hidden;
+            .texts{
+                h3,h5{
+
+                    display: none;
+                }
+                p{
+                    line-height: 2vw;
+                    font-weight: 400;
+                    color: dodgerblue;
+                    text-transform: capitalize;
+                    cursor: pointer;
+                }
+            }
+            
+            &.sel{
+                .texts{
+                    h3,h5{
+                        display: block;
+                    }
+                    p{
+                        display: none;
+                    }
+                }
+                width: calc(70% - 20px);
+            }
+            .image{
+                background-color: #ccc;
+                height: calc(2vw * 8);
+                max-height: 250px;
+                background-repeat: no-repeat;
+                background-position: bottom;
+                background-size: cover;
+                color: transparent;
+
+                @for $i from 1 through 4{
+                    &.i#{$i}{
+                        background-image: url('../image/cnt01_pic0#{$i}.png');
+                    }
+                }
+            }
+
+
+        }
+    }
+}
+
+div.cnt02{
+    section{
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: max(min(40px),2vw);
+    
+        article{
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+            width: 100%;
+
+            .image{
+                width: calc(100% / 12 * 6);
+                direction: rtl;
+                position: relative;
+                
+                .ovrGrid{
+                    width: calc(100% + (100vw - 1080px) / 2);
+                    min-width: calc(100% + (100vw - 80vw) / 2);
+                    height: calc(2vw * 12);
+                    border-radius: 0 calc(2vw * 5.5) calc(2vw * 5.5) 0 ;
+                    background-color: #333;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: top;
+                    transition: all 0.5s;
+                    position: relative;
+                    color: transparent;
+                    
+                    @for $i from 1 through 8{
+                        &.o#{$i}{
+                            background-image: url('../image/cnt02_pic0#{$i}.png');
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(odd){
+                direction: rtl;
+                .image{
+                    direction: ltr;
+                    .ovrGrid{
+                        border-radius: calc(2vw * 5.5) 0 0 calc(2vw * 5.5);
+                        right: -200%;
+                    }
+                }
+                .texts{
+                    text-align: left;
+                    direction: ltr;
+                }
+            }
+
+            &:nth-child(even){
+                .ovrGrid{
+                    left: -200%;
+                }
+            }
+
+            .texts{
+                width: calc(100% / 12 * 5);
+                opacity: 0;
+                position: relative;
+                top: -100%;
+                transition: all 0.5s;
+                
+                h3{
+                    text-transform: uppercase;
+                }
+                .txt{
+                    height: calc(2vw * 4);
+                    overflow: hidden;
+                    p{
+                        font-size: max(min(14px),0.8vw);
+                        line-height: max(min(20px),1.5vw);
+                    }
+                }
+                button{
+                     color: dodgerblue;
+                     font-weight: 500;
+                     text-transform: capitalize;
+                     cursor: pointer;
+                     border:0;
+                     background-color: transparent;
+                     display: none;
+                 }
+            }
+        }
+    }
+}
+
+div.cntWrap{
+    
+    div.cnt03{
+        width: 100vw;
+        max-width: none;
+        header{
+            width: 80vw;
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+        section{
+            overflow: hidden;
+            position: relative;
+            .artGroup{
+                width: 200%;
+                display: flex;
+                justify-content: space-between;
+                article{
+                    width: calc(100% / 10 - 20px);
+                    filter: grayscale(1);
+                    transition: all 0.5s;
+
+                    @for $i from 3 through 5{
+                        &:nth-of-type(#{$i}){
+                            filter: grayscale(0);
+                            position: relative;
+                            z-index: 555;
+                        }
+                    }
+
+                    .image{
+                        background-position: top;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        width: 100%;
+                        height: calc(2vw * 7);
+                        @for $i from 1 through 10{
+                            &.i#{$i}{
+                                background-image: url('../image/cnt03_pic0#{$i}.jpg');
+                            }
+                        }
+
+                    }
+
+                    &:hover{
+                        .image{
+                            animation: topTo 10s linear;
+                        }
+                    }
+                }
+            }
+
+            .btns{
+                width: 100%;
+                position: absolute;
+                top: 0;left: 0;
+                display: flex;
+                justify-content: space-between;
+                font-size: calc(2vw * 5);
+                padding: 0 10%;
+                
+                &:hover{
+                    .right{
+                        opacity: 1;
+                    }
+                    .left{
+                        opacity: 1;
+                    }
+                }
+                .left{
+                    cursor: pointer;
+                    opacity: 0;
+                    transition: opacity 0.5s;
+                    color: rgba(255,255,255,0.8);
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+                }
+                .right{
+                    cursor: pointer;
+                    opacity: 0;
+                    transition: opacity 0.5s;
+                    color: rgba(255,255,255,0.8);
+                    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+                }
+            }
+            
+        }
+    }
+}
+
+div.ftrWrap{
+    background-color: #666;
+    padding: 2vw 0;
+    margin-top: 6vw;
+    color: #fff;
+    footer{
+        width: 80%;
+        max-width: 1080px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        div{
+            width: calc(100% / 12 * 5);
+            h3{
+                font-size: max(min(15px),1vw);
+                font-weight: 700;
+                text-transform: capitalize;
+                line-height: max(min(40px),2vw);
+            }
+            h5{
+                font-size: max(min(12px), 0.7vw);
+                font-weight: 600;
+                text-transform: capitalize;
+                line-height: max(min(40px),2vw);
+            }
+            p{
+                font-size: max(min(12px), 0.7vw);
+                line-height: max(min(20px),1vw);
+                height: calc(2vw * 2.5);
+                overflow: hidden;
+            }
+        }
+        div.sns{
+            line-height: max(min(40px),2vw);
+            font-size: max(min(20px),1.5vw);
+            text-align: right;
+            i{
+                cursor: pointer;
+                position: relative;
+                a{
+                    color:transparent;
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;left: 0;
+                    cursor: pointer;
+                }
+            }
+        }
+        div.html{
+            color: transparent;
+        }
+    }
+}
+
+$maxTab : 780px;
+$maxMob : 420px;
+
+
+@mixin tab {
+    @media (min-width:0) and (max-width: #{$maxTab}) {
+        @content;
+    }
+}
+
+@include tab{
+    body{
+        overflow-x: hidden;
+    }
+    div.mnWrap{
+        padding: 2vw 0;
+        .imgGroup{
+            width: 450%;
+        }
+        main{
+            display: block;
+            width: 90vw;
+            .imgView{
+                width: 100%;
+                overflow: hidden;
+                .imgGroup{
+                    height: 40vw;
+                   .image{
+                       height: 35vw;
+                       &:nth-of-type(2){
+                           height: 40vw;
+                       }
+                   }
+                   
+                }
+                .ovrGrid{
+                    width: 100%;
+                }
+            }
+            .texts{
+                width: 100%;
+                margin-top: 1vw;
+                h2{
+                    text-align: center;
+                }
+                p{
+                    display: none;
+                }
+            }
+        }
+
+        .btn{
+            .left{
+                opacity: 1;
+            }
+            .right{
+                opacity: 1;
+            }
+                
+        }
+    }
+    div.cnt02 section article:nth-child(even) .ovrGrid{
+        left: 0;
+    }
+    div.cnt02 section article:nth-child(odd) .image .ovrGrid{
+        right: 0;
+    }
+
+    div.cntWrap{
+        margin-top: max(min(30px), 2vw);
+
+    }
+    
+    div.cnt01{
+        section{
+            .artTop{
+                min-height: 0;
+            }
+            .artBtm{
+                min-height: 0;
+            }
+    
+        }
+    }
+
+    footer{
+        width: 90vw;
+    }
+
+}
+
+
