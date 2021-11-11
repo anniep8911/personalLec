@@ -1,2 +1,0 @@
-# personalLec
-personal website
