@@ -1,0 +1,664 @@
+@import url(all.css);
+@import url(xeicon.css);
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Noto+Sans+KR:wght@100;300;400&display=swap');
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: 100;
+    src: url(../fonts/NotoSansKR-Thin.otf);
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: 300;
+    src: url(../fonts/NotoSansKR-Light.otf);
+}
+
+@font-face {
+    font-family: 'Noto Sans KR';
+    font-weight: 500;
+    src: url(../fonts/NotoSansKR-Medium.otf);
+}
+
+@font-face {
+    font-family: 'Amatic SC';
+    font-weight: 400;
+    src: url(../fonts/AmaticSC-Regular.ttf);
+}
+@font-face {
+    font-family: 'Amatic SC';
+    font-weight: 700;
+    src: url(../fonts/AmaticSC-Bold.ttf);
+}
+
+body {
+    font-size: 14px;
+    line-height: 20px;
+    color: #555;
+    font-family: 'Noto Serif KR';
+    font-weight: 300;
+    background-color: #f3eee9;
+    overflow-y: hidden;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Noto Sans KR';
+}
+
+/*header*/
+div.hdrWrap header{
+    width: 90%;
+    max-width: 1080px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Amatic SC';
+    height: 10vh;
+    position: fixed;
+    top: 0;left: 0;right: 0;
+    z-index: 999;
+}
+div.hdrWrap header h1{
+    font-weight: 700;
+    font-size: 7vh;
+    color: #000;
+    width: calc(100% / 12 * 2);
+    line-height: 8vh;
+    cursor: pointer;
+}
+div.hdrWrap header ul{
+    width: calc(100% / 12 * 5);
+    font-size: 5vh;
+    display: flex;
+    justify-content: space-around;
+    line-height: 12vh;
+}
+div.hdrWrap header ul li{
+    border-left: 1px solid black;
+    font-weight: 400;
+    cursor: pointer;
+    padding: 0 5%;
+}
+div.hdrWrap header ul li.checked{
+    font-weight: 700;
+}
+
+/*메인*/
+div.mnWrap{
+    padding: 10vh 0;
+}
+div.mnWrap main{
+    width: 90%;
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 2vh;
+}
+div.mnWrap main section{
+    width: calc(100% / 12 * 6);
+    padding-top: 40px;
+    margin: 0 auto;
+    height: 85vh;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+div.mnWrap main section .mn01{
+    width: 90%;
+    border: 3px solid black;
+    height: 75vh;
+    position: absolute;
+    top: 0;left: 0;
+}
+div.mnWrap main section .mn03{
+    width: 90%;
+    border: 3px solid black;
+    height: 75vh;
+    position: absolute;
+    bottom: 0;right: 0;
+}
+div.mnWrap main section .mn02{
+    position: absolute;
+    margin: auto;
+    top: 0;left: 0;right: 0;bottom: 0;
+    width: 90%;
+    border: 3px solid black;
+    height: 75vh;
+    z-index: 5;
+    background-color: #f3eee9;
+    padding-top: 40px;
+    padding-left: 40px;
+}
+div.mnWrap main section .mn02 h2{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 80px;
+}
+
+div.mnWrap main section .mn02 .texts dl{
+    margin-top: 40px;
+}
+div.mnWrap main section .mn02 .texts dl:first-child{
+    margin-top: 0;
+}
+div.mnWrap main section .mn02 .texts dl dt{
+    font-family: serif;
+    font-family: 'Amatic SC';
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 40px;
+}
+div.mnWrap main nav{
+    width: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 40px;
+    margin-top: -320px;
+}
+div.mnWrap main nav a i{
+    font-size: 40px;
+    line-height: 80px;
+    color: #000;
+}
+/*contents*/
+div.cntWrap{
+    height: 1080px;
+    padding-top: 12vh;
+}
+div.cntWrap .content{
+    width: 90%;
+    max-width: 1080px;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+
+/*careers*/
+div.careers .artView{
+    width: 90%;
+    max-width: 1080px;
+    margin: 0 auto;
+    direction: rtl;
+}
+div.careers .artGroup{
+    display: flex;
+    width: calc((100vw - 1080px)/2 + 100%);
+
+}
+div.careers .artGroup article{
+    width: calc(100% / 12 * 2 );
+    border: 1px solid black;
+    border-left: 0;
+    padding: 40px 20px 40px;
+    cursor: pointer;
+    transition: width 0.5s;
+    text-align: left;
+    height: 80vh;
+}
+div.careers .artGroup article:last-of-type.show{
+    padding-left: calc((100vw - 1080px) / 2);
+}
+div.careers .artGroup article.show{
+    width: calc(100% / 12 * 8);
+    padding-left: 100px;
+}
+div.careers .artGroup article header{
+    font-family: 'Amatic SC';
+}
+div.cntWrap .artGroup article header h2{
+    font-weight: 700;
+    font-size: 40px;
+}
+div.careers .artGroup article header h5{
+    font-weight: 400;
+    font-size: 20px;
+    display: none;
+}
+div.careers .artGroup article.show header h5{
+    display: block;
+}
+div.careers .artGroup article section{
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+div.careers .artGroup article.show section{
+    opacity: 1;
+}
+div.careers .artGroup article section dl{
+    margin-top: 20px;
+    position: relative;
+}
+div.careers .artGroup article section dl dt{
+    font-family: 'Amatic SC';
+    font-weight: 700;
+    line-height: 40px;
+    font-size: 30px;
+    margin-left: 20px; 
+    cursor: pointer;
+}
+div.careers .artGroup article section dl dt img{
+    width: 60px;height: 40px;
+    margin-left: 20px;
+}
+div.careers .artGroup article section dl dd{
+    margin-left: 40px;
+    line-height: 40px;
+    height: 0;
+    overflow: hidden;
+    font-size: 16px;
+    transition: height 0.5s;
+}
+div.careers .artGroup article section dl dt.checked~dd{
+    height:40px;
+}
+
+
+/*skills*/
+div.skills{
+    display: flex;
+    justify-content: space-between;
+}
+div.skills .sectDrop{
+    width: calc(100% / 12 * 8 - 20px);
+    display: flex;
+    position: relative;
+    height: 85vh;
+}
+div.skills .sectDrop article{
+    width: 90%;
+    height: 80vh;
+    border: 1px solid black;
+    background-color:  #f3eee9;
+    position: absolute;
+    padding: 40px 90px;
+    /* padding: 120px 90px; */
+    cursor: pointer;
+}
+div.skills .sectDrop article h3{
+    font-size: 25px;
+    font-family: 'Amatic SC';
+    font-weight: 700;
+    text-align: center;
+}
+div.skills .sectDrop .skill div{
+    color: transparent;
+}
+
+div.skills .sectDrop article .percent{
+    width: 100%;
+    height: 50px;
+    background-color: #000;
+    margin-top: 70px;
+    border-radius: 20px;
+    color: #fff;
+    text-align:center;
+    line-height:50px;
+}
+div.skills .sectDrop article .graph{
+    width: 100%;
+    height: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -51px;
+    margin-left: -1px;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+div.skills .sectDrop article ul{
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+div.skills .sectDrop article ul li{
+    line-height: 40px;
+}
+div.skills .sectDrop .skill.show{
+    top: 0;left: 0;
+    z-index: 3;
+}
+div.skills .sectDrop .tool{
+    right: 0;bottom: 0;
+}
+div.skills .sectDrag{
+    width: calc(100% / 12 * 4 - 20px);
+}
+div.skills .sectDrag .artWrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 20px;
+    display: none;
+}
+div.skills .sectDrag .artWrap.show{
+    display: flex;
+}
+
+div.skills .sectDrag .artWrap article{
+    width: calc(50% - 10px);
+    height: 19vh;
+    border: 1px solid black;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+}
+div.skills .sectDrag .artWrap article .texts{
+    font-family: 'Amatic SC';
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 10px;
+
+}
+div.skills .sectDrag .artWrap article .image{
+    width: 90%;
+    margin: 0 auto;
+    height: 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: 10px;
+}
+div.skills .sectDrag .artWrap article .image.i1{background-image: url(../image/html5.png);}
+div.skills .sectDrag .artWrap article .image.i2{background-image: url(../image/css3.png);}
+div.skills .sectDrag .artWrap article .image.i3{background-image: url(../image/scss.png);}
+div.skills .sectDrag .artWrap article .image.i4{background-image: url(../image/javascript.png);}
+div.skills .sectDrag .artWrap article .image.i5{background-image: url(../image/jquqery.png);}
+div.skills .sectDrag .artWrap article .image.i6{background-image: url(../image/bootstrap.png);}
+div.skills .sectDrag .artWrap article .image.i7{background-image: url(../image/webpack.png);}
+div.skills .sectDrag .artWrap article .image.i8{background-image: url(../image/hive.png);}
+div.skills .sectDrag .artWrap article .image.i9{background-image: url(../image/vscode.png);}
+div.skills .sectDrag .artWrap article .image.i10{background-image: url(../image/photoshop.png);}
+div.skills .sectDrag .artWrap article .image.i11{background-image: url(../image/illustrator.png);}
+div.skills .sectDrag .artWrap article .image.i12{background-image: url(../image/eclipse.png);}
+div.skills .sectDrag .artWrap article .image.i13{background-image: url(../image/git.png);}
+div.skills .sectDrag .artWrap article .image.i14{background-image: url(../image/jira.png);}
+div.skills .sectDrag .artWrap article .image.i15{background-image: url(../image/excel.png);}
+div.skills .sectDrag .artWrap article .image.i16{background-image: url(../image/slack.png);}
+
+/*portfolio*/
+div.content.portfolio{
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
+}
+div.portfolio .artView{
+    width: 100%;
+    overflow: hidden;
+}
+div.portfolio .artView .artGroup{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+div.portfolio .artView .artGroup article{
+    width: calc(100% / 4 - 20px);
+    position: relative;
+    height: 80vh;
+    z-index: 557;
+}
+div.portfolio .artView .artGroup article .image{
+    width: 100%;
+    height: 560px;
+    border: 1px solid black;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    cursor: pointer;
+    position: relative;
+}
+
+div.portfolio .artView .artGroup article.i1,div.portfolio .artView .artGroup article.i3,div.portfolio .artView .artGroup article.i5,div.portfolio .artView .artGroup article.i7{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+}
+div.portfolio .artView .artGroup article.i1 .image{
+    background-image: url(../image/porti1.jpg);
+    border-radius: 200px 0 0 0;
+}
+div.portfolio .artView .artGroup article.i1 .texts{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.portfolio .artView .artGroup article.i2 .image{
+    background-image: url(../image/porti3.jpg);
+    border-radius: 200px 0 200px 0;
+}
+div.portfolio .artView .artGroup article.i2 .texts{
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+}
+div.portfolio .artView .artGroup article.i3 .image{
+    background-image: url(../image/blog.png);
+    border-radius: 0 0 200px 0;
+}
+div.portfolio .artView .artGroup article.i3 .texts{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.portfolio .artView .artGroup article.i4 .image{
+    background-image: url(../image/porti5.jpg);
+    border-radius: 200px 0 0 0;
+}
+div.portfolio .artView .artGroup article.i4 .texts{
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+}
+div.portfolio .artView .artGroup article.i5 .image{
+    background-image: url(../image/porti5.jpg);
+    border-radius: 200px 0 200px 0;
+}    
+div.portfolio .artView .artGroup article.i5 .texts{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.portfolio .artView .artGroup article.i6 .image{
+    background-image: url(../image/porti1.jpg);
+    border-radius: 0 0 200px 0;
+   
+}
+div.portfolio .artView .artGroup article.i6 .texts{
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+}
+div.portfolio .artView .artGroup article.i7 .image{
+    background-image: url(../image/porti1.jpg);
+    border-radius: 200px 0 200px 0;
+
+}
+div.portfolio .artView .artGroup article.i7 .texts{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+div.portfolio .artView .artGroup article .texts{
+    height: 0;
+    transition: height 0.8s;
+}
+div.portfolio .artView .artGroup article:hover .texts{
+    height: 350px;
+    width: 90%;
+    background-color: rgba(255,255,255,0.9);
+    margin:auto;
+    left: 0; right: 0;
+}
+
+div.portfolio .artView .artGroup article .texts h2{
+    font-family:'Amatic SC';
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 80px;
+    text-align: center;
+}
+div.portfolio .artView .artGroup article .texts ul{
+    opacity: 0;
+    transition: all 0.5s;
+}
+div.portfolio .artView .artGroup article .texts .btns{
+    opacity: 0;
+    transition: all 0.5s;
+    animation-duration: 0.5s;
+}
+div.portfolio .artView .artGroup article:hover .texts h2{
+    font-weight: 700;
+}
+div.portfolio .artView .artGroup article:hover .texts ul{
+    opacity: 1;
+    padding-left: 40px;
+    text-transform: capitalize;
+    list-style: square;
+}
+div.portfolio .artView .artGroup article .texts ul li{
+    line-height: 30px;
+}
+div.portfolio .artView .artGroup article:hover .texts .btns{
+    opacity: 1;
+    text-align: center;
+    width: 100%;
+}
+div.portfolio .artView .artGroup article:hover .texts .btns .btn{
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: #999;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 40px;
+}
+
+div.portfolio .artBtns{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+}
+div.portfolio .artBtns button{
+    width: calc(100% / 5);
+    height: 100%;
+    z-index: 888;
+    background-color:transparent;
+}
+div.portfolio .artBtns .prevIcon{
+    width: 100px;
+    height: 80px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-image: url(../image/prev.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+div.portfolio .artBtns .nextIcon{
+    width: 100px;
+    height: 80px;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    background-image: url(../image/next.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+
+}
+
+
+/*footer*/
+div.ftrWrap footer{
+    width: 90%;
+    max-width: 1080px;
+    margin: auto;
+    position: fixed;
+    bottom: 20px; left: 0;right: 0;
+    text-align: center;
+    font-family: 'Amatic SC';
+    font-weight: 700;
+    font-size: 30px;
+    z-index: 999;
+}
+div.ftrWrap footer h2{
+    animation-name: mov;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+div.ftrWrap .iconTop{
+    width: 175px;
+    height: 120px;
+    background-image: url(../image/totop.png);
+    background-repeat: no-repeat;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    animation-name: ani;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    cursor: pointer;
+    z-index: 9999;
+
+}
+
+@keyframes ani{
+    0%{
+        bottom: 50px;
+       
+    }
+    50%{
+        bottom: 80px;
+        
+    }100%{
+        bottom: 50px;      
+    }
+}
+
+@keyframes mov{
+    0%{
+        transform: rotate(1deg);
+    }50%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(1deg);
+    }
+}
+
+*.clickTop::before{
+    display: block;
+    content: '';
+    text-align: center;
+    width:95px;
+    height: 70px;
+    background-image: url(../image/click.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -65px;
+    margin-left: 40px;
+}
+
+*.clickR::before{
+    display: block;
+    content: '';
+    text-align: center;
+    width:95px;
+    height: 70px;
+    background-image: url(../image/click.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    margin-top: -65px;
+    margin-left: 40px;
+    position: absolute;
+    top: 40px;
+    right: -30px;
+}

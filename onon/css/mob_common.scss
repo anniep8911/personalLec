@@ -1,0 +1,463 @@
+//변수선언부
+$dtFz: 20px;
+$ddFz: 14px;
+$fontTitle: 'Amatic SC';
+$fontNote: 'Noto Sans KR';
+$sigColor: #f3eee9;
+$breakpoint-mobile: 420px;
+$breakpoint-tablet: 780px;
+$breakpoint-desktop: 1920px;
+
+@mixin mobile {
+    @media (min-width:0) and (max-width: #{$breakpoint-mobile}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop}) {
+        @content;
+    }
+}
+
+@mixin wrapInner {
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 20px;
+    border-left: 2px solid black;
+    padding-top: 40px;
+    overflow: hidden;
+}
+%header {
+    border-left: 2px solid black;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    font-family: $fontTitle;
+    font-weight: 700;
+    font-size: 48px;
+    padding-left: 20px;
+    padding-top: 40px;
+    h1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: -30px;
+        line-height: 80px;
+        &::before {
+            display: block;
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #000;
+            margin-right: 20px;
+        }
+    }
+}
+%dl {
+    margin-left: 20px;
+    dt {
+        font-size: $dtFz;
+        font-family: $fontTitle;
+        font-weight: 700;
+        line-height: 40px;
+    }
+    dd {
+        font-size: $ddFz;
+        font-family: $fontNote;
+        font-weight: 200;
+        line-height: 40px;
+        display: flex;
+        align-items: center;
+        margin-left: 20px;
+        text-transform: capitalize;
+        &::before {
+            display: block;
+            content: '';
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: #000;
+            margin-right: 5px;
+        }
+    }
+}
+
+%alert {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    font-size: 20px;
+    background-color: #000;
+    text-align: center;
+    font-family: $fontTitle;
+    line-height: 40px;
+}
+
+//전체 컬러
+body {
+    background-color: $sigColor;
+}
+//header
+div.hdrWrap {
+    .alert {
+        @extend %alert;
+    }
+    header {
+        @extend %header;
+        ul {
+            display: none;
+        }
+    }
+}
+
+//메인
+div.mnWrap {
+    padding-top: 40px;
+    @include wrapInner;
+    main {
+        section {
+            width: calc(100% - 200px);
+            position: relative;
+            margin: 0 auto;
+            border: 2px solid black;
+            padding-bottom: 40px;
+            padding-right: 20px;
+            .mn01 {
+                h2 {
+                    font-size: 30px;
+                    text-align: center;
+                    margin-top: 40px;
+                }
+                .texts {
+                    @extend %dl;
+                }
+            }
+        }
+    }
+}
+
+//컨텐츠 공통
+div.cntWrap {
+    header {
+        @extend %header;
+    }
+}
+
+//커리어
+div.careers {
+    section {
+        @include wrapInner;
+        article {
+            .title {
+                padding: 0;
+                background-color: #000;
+                width: 100%;
+                h2 {
+                    line-height: 40px;
+                    font-family: $fontTitle;
+                    font-weight: 500;
+                    font-size: 25px;
+                    text-align: center;
+                    color: #fff;
+                    &::after{
+                        display: inline;
+                        content: '(touch!)';
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: #fff;
+                        margin-left: 20px;
+                    }
+                }
+            }
+            .texts {
+                display: none;
+            }
+            &.show{
+                padding: 10px 30px;
+                border: 1px solid black;
+                height: 100%;
+                .title {
+                    background-color: transparent;
+                    h2 {
+                        color: #000;
+                        &::after{
+                            display: none;
+                            content: '(touch!)';
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: #fff;
+                            margin-left: 10px;
+                        }
+                    }
+                }
+                .texts {
+                    display: block;
+                    @extend %dl;
+                    dt.checked~dd {
+                        display: flex;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//스킬&툴
+div.skills {
+    section {
+        @include wrapInner;
+        article {
+           div{
+               width: 90%;
+               margin: 0 auto;
+               border: 1px solid black;
+               transition: all 0.5s;
+               h2{
+                   font-family: $fontTitle;
+                   font-size: 25px;
+                   text-align: center;
+                   line-height: 40px;
+                   font-weight: 500;
+                   background-color: #000;
+                   color: #fff;
+                   &::after{
+                    display: inline;
+                    content: '(touch!)';
+                    font-size: 12px;
+                    font-weight: 400;
+                    color: #fff;
+                    margin-left: 10px;
+                }
+               }
+               ul{
+                   width: 0px;
+                   height: 0px;
+                   overflow: hidden;
+                }
+                &.checked{
+                    h2{
+                        background-color: transparent;
+                        color: #000;
+                        &::after{
+                            display: none;
+                            content: '(touch!)';
+                            font-size: 12px;
+                            font-weight: 400;
+                            color: #fff;
+                            margin-left: 10px;
+                        }
+                    }
+                    ul{
+                        list-style: disc;
+                        width: 100%;
+                        height: 100%;
+                        padding: 10px 0;
+                    li{
+                        width: 80%;
+                        margin: 0 auto;
+                        line-height: 30px;
+                        font-size: $ddFz;
+                    }
+                }
+               }
+           }
+         }
+    }
+}
+
+//포트폴리오 
+div.portfolio {
+    section {
+        @include wrapInner;
+        padding-bottom: 40px;
+        .artGroup {
+            width: 400%;
+            display: flex;
+            justify-content: space-around;
+            article {
+                width: calc(100% / 4 - 20px);
+                height: 320px;
+                border: 1px solid black;
+                position: relative;
+                a{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                .image{
+                    width: 100%;
+                    height: 100%;
+                    @for $i from 1 through 5{
+                        &.i#{$i}{
+                            background-size: cover;
+                            background-position: top;
+                            background-repeat: no-repeat;
+                            background-image: url('../image/porti#{$i}.jpg');
+                        }
+                    }
+                }
+                .texts {
+                    h3 {
+                        font-family: $fontTitle;
+                        font-weight: 700;
+                        font-size: 25px;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//footer
+div.ftrWrap {
+    footer {
+        @extend %alert;
+    }
+}
+
+//mobile
+@include mobile {
+    %dl {
+        margin-left: 20px;
+        dt {
+            font-size: 18px;
+            font-family: $fontTitle;
+            font-weight: 500;
+            line-height: 40px;
+            margin-top: 20px;
+        }
+        dd {
+            font-size: 12px;
+            font-family: $fontNote;
+            font-weight: 200;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            margin-left: 0;
+            text-transform: capitalize;
+            &::before {
+                display: block;
+                content: '';
+                width: 5px;
+                height: 5px;
+                border-radius: 50%;
+                background-color: #000;
+                margin-right: 5px;
+            }
+        }
+    }
+
+    %header {
+        border-left: 2px solid black;
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        font-family: $fontTitle;
+        font-weight: 500;
+        font-size: 35px;
+        padding-left: 20px;
+        padding-top: 20px;
+        h1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: -30px;
+            line-height: 40px;
+            &::before {
+                display: block;
+                content: '';
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: #000;
+                margin-right: 20px;
+            }
+        }
+    }
+    div.hdrWrap {
+        .alert {
+            font-size: 12px;
+        }
+    }
+    div.mnWrap {
+        main {
+            section {
+                width: 100%;
+                padding-bottom: 20px;
+                .mn01 {
+                    h2 {
+                        font-size: 20px;
+                        text-align: center;
+                        margin-top: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    div.careers {
+        section {
+            padding-top: 20px;
+            article {
+                .title{
+                    h2{
+                        font-size: 15px;
+                    }
+                }
+                &.show {
+                    height: 100%;
+                   .texts{
+                       margin: 0;
+                    dl{
+                        dt{margin: 0; font-size: 14px;}
+                        
+                    }
+                }
+                }
+            }
+        }
+    }
+
+    div.skills{
+        section{
+            article{
+                display: block;
+                div{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    &.show{
+                        padding-bottom:10px;
+                        width: 100%;
+                        ul{
+                            li{
+                                width: 100%;
+                                margin-left: 30px;
+                                line-height: 20px; 
+                            }
+                        }
+                    }
+                    h2{
+                        width: 100%;
+                        text-align: center;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+    div.portfolio{
+        section{
+            .artGroup{
+                width: 400%;
+            }
+        }
+    }
+}
