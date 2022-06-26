@@ -30,6 +30,9 @@
     src: url(../fonts/AmaticSC-Bold.ttf);
 }
 
+section>h2, article>h2{
+    color: transparent;
+}
 body {
     font-size: 14px;
     line-height: 20px;
