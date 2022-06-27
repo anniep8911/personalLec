@@ -1,3 +1,7 @@
+@import url(all.css);
+@import url(xeicon.css);
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Hi+Melody&display=swap');
+
 /*
 reset.css
 html문서의 스타일을 만들기 쉽게 하기 위해 스타일을 사용 초기에 설정합니다.
@@ -8,6 +12,9 @@ html문서의 스타일을 만들기 쉽게 하기 위해 스타일을 사용 �
 b요소제거
 main요소, hr요소 추가
 */
+html{
+    font-size: 1.47vh;
+}
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -23,11 +30,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	/*font-size: 100%;*/
-	font: inherit;
 	vertical-align: baseline;
-    
-    /*추가속성*/
     box-sizing: border-box;
 }
 
@@ -36,9 +39,6 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {
 	display: block;
 }
-/*body {
-	line-height: 1;
-}*/
 ol, ul, menu {
 	list-style: none;
 }
@@ -65,49 +65,10 @@ button, input, option, label, select, textarea{
 form{
     display: block;
 }
-button{
-    width: 160px;
-    height: 40px;
-    text-transform: uppercase;
-    border: 0;
-    cursor: pointer;
-}
-
 *:focus{
     outline: 0;
 }
 
-@import url(all.css);
-@import url(xeicon.css);
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Noto+Sans+KR:wght@100;300;400&display=swap');
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-weight: 100;
-    src: url(../fonts/NotoSansKR-Thin.otf);
+body{
+    font-family: 'Hi Melody';
 }
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-weight: 300;
-    src: url(../fonts/NotoSansKR-Light.otf);
-}
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-weight: 500;
-    src: url(../fonts/NotoSansKR-Medium.otf);
-}
-
-@font-face {
-    font-family: 'Amatic SC';
-    font-weight: 400;
-    src: url(../fonts/AmaticSC-Regular.ttf);
-}
-@font-face {
-    font-family: 'Amatic SC';
-    font-weight: 700;
-    src: url(../fonts/AmaticSC-Bold.ttf);
-}
-
-
-

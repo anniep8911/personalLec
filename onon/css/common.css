@@ -1,52 +1,16 @@
-@import url(all.css);
-@import url(xeicon.css);
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Noto+Sans+KR:wght@100;300;400&display=swap');
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-weight: 100;
-    src: url(../fonts/NotoSansKR-Thin.otf);
-}
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-weight: 300;
-    src: url(../fonts/NotoSansKR-Light.otf);
-}
-
-@font-face {
-    font-family: 'Noto Sans KR';
-    font-weight: 500;
-    src: url(../fonts/NotoSansKR-Medium.otf);
-}
-
-@font-face {
-    font-family: 'Amatic SC';
-    font-weight: 400;
-    src: url(../fonts/AmaticSC-Regular.ttf);
-}
-@font-face {
-    font-family: 'Amatic SC';
-    font-weight: 700;
-    src: url(../fonts/AmaticSC-Bold.ttf);
-}
+@import url('./reset.css');
 
 section>h2, article>h2{
     color: transparent;
 }
 body {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 1.4rem;
+    line-height: 2rem;
     color: #555;
-    font-family: 'Noto Serif KR';
     font-weight: 300;
     background-color: #f3eee9;
     overflow-y: hidden;
 }
-
-h1,h2,h3,h4,h5,h6{
-    font-family: 'Noto Sans KR';
-}
-
 /*header*/
 div.hdrWrap header{
     width: 90%;
@@ -54,26 +18,23 @@ div.hdrWrap header{
     margin: auto;
     display: flex;
     justify-content: space-between;
-    font-family: 'Amatic SC';
     height: 10vh;
     position: fixed;
     top: 0;left: 0;right: 0;
     z-index: 999;
+    text-transform: uppercase;
+    line-height: 8rem;
+    font-size: 2rem;
 }
 div.hdrWrap header h1{
-    font-weight: 700;
-    font-size: 7vh;
     color: #000;
     width: calc(100% / 12 * 2);
-    line-height: 8vh;
     cursor: pointer;
 }
 div.hdrWrap header ul{
     width: calc(100% / 12 * 5);
-    font-size: 5vh;
     display: flex;
     justify-content: space-around;
-    line-height: 12vh;
 }
 div.hdrWrap header ul li{
     border-left: 1px solid black;
@@ -86,39 +47,39 @@ div.hdrWrap header ul li.checked{
 }
 
 /*메인*/
-div.mnWrap{
+div.cntWrap{
     padding: 10vh 0;
 }
-div.mnWrap main{
+div.cntWrap main{
     width: 90%;
     max-width: 1080px;
     margin: 0 auto;
     margin-top: 2vh;
 }
-div.mnWrap main section{
-    width: calc(100% / 12 * 6);
-    padding-top: 40px;
+div.cntWrap main section{
+    width: 60%;
+    padding-top: 4rem;
     margin: 0 auto;
     height: 85vh;
     position: relative;
     display: flex;
     justify-content: space-between;
 }
-div.mnWrap main section .mn01{
+div.cntWrap main section .mn01{
     width: 90%;
     border: 3px solid black;
     height: 75vh;
     position: absolute;
     top: 0;left: 0;
 }
-div.mnWrap main section .mn03{
+div.cntWrap main section .mn03{
     width: 90%;
     border: 3px solid black;
     height: 75vh;
     position: absolute;
     bottom: 0;right: 0;
 }
-div.mnWrap main section .mn02{
+div.cntWrap main section .mn02{
     position: absolute;
     margin: auto;
     top: 0;left: 0;right: 0;bottom: 0;
@@ -127,38 +88,37 @@ div.mnWrap main section .mn02{
     height: 75vh;
     z-index: 5;
     background-color: #f3eee9;
-    padding-top: 40px;
-    padding-left: 40px;
+    padding-top: 4rem;
+    padding-left: 4rem;
 }
-div.mnWrap main section .mn02 h2{
-    font-size: 40px;
+div.cntWrap main section .mn02 h2{
+    font-size: 4rem;
     font-weight: 700;
-    line-height: 80px;
+    line-height: 8rem;
 }
 
-div.mnWrap main section .mn02 .texts dl{
-    margin-top: 40px;
+div.cntWrap main section .mn02 .texts dl{
+    margin-top: 4rem;
+    font-size: 1.5rem;
 }
-div.mnWrap main section .mn02 .texts dl:first-child{
+div.cntWrap main section .mn02 .texts dl:first-child{
     margin-top: 0;
 }
-div.mnWrap main section .mn02 .texts dl dt{
+div.cntWrap main section .mn02 .texts dl dt{
     font-family: serif;
-    font-family: 'Amatic SC';
+    font-size: 2rem;
     font-weight: 700;
-    font-size: 30px;
-    line-height: 40px;
+    line-height: 4rem;
 }
-div.mnWrap main nav{
+div.cntWrap main nav{
     width: 2%;
     display: flex;
     flex-wrap: wrap;
-    line-height: 40px;
-    margin-top: -320px;
+    margin-top: -32rem;
 }
-div.mnWrap main nav a i{
-    font-size: 40px;
-    line-height: 80px;
+div.cntWrap main nav a i{
+    line-height: 8rem;
+    font-size: 4rem;
     color: #000;
 }
 /*contents*/
@@ -195,23 +155,19 @@ div.careers .artGroup article{
     text-align: left;
     height: 80vh;
 }
-/* div.careers .artGroup article:last-of-type.show{
-    padding-left: calc((100vw - 1080px) / 2);
-} */
+
 div.careers .artGroup article.show{
     width: calc(100% / 12 * 8);
-    padding-left: 100px;
+    padding-left: 5%;
 }
-div.careers .artGroup article header{
-    font-family: 'Amatic SC';
-}
+
 div.cntWrap .artGroup article header h2{
     font-weight: 700;
-    font-size: 40px;
+  
 }
 div.careers .artGroup article header h5{
     font-weight: 400;
-    font-size: 20px;
+    font-size: 2rem;
     display: none;
 }
 div.careers .artGroup article.show header h5{
@@ -225,31 +181,31 @@ div.careers .artGroup article.show section{
     opacity: 1;
 }
 div.careers .artGroup article section dl{
-    margin-top: 20px;
+    margin-top: 2rem;
     position: relative;
 }
 div.careers .artGroup article section dl dt{
-    font-family: 'Amatic SC';
+    font-size: 1.5rem;
     font-weight: 700;
-    line-height: 40px;
-    font-size: 30px;
+    line-height: 2rem;
     margin-left: 20px; 
     cursor: pointer;
+    font-size: 2rem;
+    text-transform: capitalize;
 }
 div.careers .artGroup article section dl dt img{
     width: 60px;height: 40px;
     margin-left: 20px;
 }
 div.careers .artGroup article section dl dd{
-    margin-left: 40px;
-    line-height: 40px;
+    margin-left: 4rem;
+    line-height: 2rem;
     height: 0;
     overflow: hidden;
-    font-size: 16px;
     transition: height 0.5s;
 }
 div.careers .artGroup article section dl dt.checked~dd{
-    height:40px;
+    height:4rem;
 }
 
 
@@ -270,15 +226,16 @@ div.skills .sectDrop article{
     border: 1px solid black;
     background-color:  #f3eee9;
     position: absolute;
-    padding: 40px 90px;
-    /* padding: 120px 90px; */
+    padding: 8rem 20%;
     cursor: pointer;
 }
 div.skills .sectDrop article h3{
-    font-size: 25px;
-    font-family: 'Amatic SC';
+   
+    font-size: 4rem;
+    line-height: 4rem;
     font-weight: 700;
     text-align: center;
+    text-transform: uppercase;
 }
 div.skills .sectDrop .skill div{
     color: transparent;
@@ -306,12 +263,12 @@ div.skills .sectDrop article .graph{
     border-radius: 20px;
 }
 div.skills .sectDrop article ul{
-    width: 85%;
     margin: 0 auto;
     margin-top: 40px;
 }
 div.skills .sectDrop article ul li{
-    line-height: 40px;
+    line-height: 3rem;
+    font-size: 1.5rem;
 }
 div.skills .sectDrop .skill.show{
     top: 0;left: 0;
@@ -343,17 +300,18 @@ div.skills .sectDrag .artWrap article{
     z-index: 10;
 }
 div.skills .sectDrag .artWrap article .texts{
-    font-family: 'Amatic SC';
-    font-size: 30px;
+
     text-align: center;
     font-weight: 700;
     margin-top: 10px;
+    font-size: 2rem;
+    text-transform: uppercase;
 
 }
 div.skills .sectDrag .artWrap article .image{
     width: 90%;
     margin: 0 auto;
-    height: 50%;
+    height: 40%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -399,7 +357,7 @@ div.portfolio .artView .artGroup article{
 }
 div.portfolio .artView .artGroup article .image{
     width: 100%;
-    height: 560px;
+    height: 95%;
     border: 1px solid black;
     background-size: cover;
     background-repeat: no-repeat;
@@ -407,83 +365,41 @@ div.portfolio .artView .artGroup article .image{
     cursor: pointer;
     position: relative;
 }
-
-div.portfolio .artView .artGroup article.i1,div.portfolio .artView .artGroup article.i3,div.portfolio .artView .artGroup article.i5,div.portfolio .artView .artGroup article.i7{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-}
 div.portfolio .artView .artGroup article.i1 .image{
     background-image: url(../image/porti1.jpg);
     border-radius: 200px 0 0 0;
 }
-div.portfolio .artView .artGroup article.i1 .texts{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+
 div.portfolio .artView .artGroup article.i2 .image{
     background-image: url(../image/porti3.jpg);
     border-radius: 200px 0 200px 0;
 }
-div.portfolio .artView .artGroup article.i2 .texts{
-    position: absolute;
-    bottom: 80px;
-    left: 0;
-}
+
 div.portfolio .artView .artGroup article.i3 .image{
-    background-image: url(../image/blog.png);
+    background-image: url(../image/porti5.jpg);
     border-radius: 0 0 200px 0;
 }
-div.portfolio .artView .artGroup article.i3 .texts{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+
 div.portfolio .artView .artGroup article.i4 .image{
-    background-image: url(../image/porti5.jpg);
+    background-image: url(../image/blog.png);
     border-radius: 200px 0 0 0;
 }
-div.portfolio .artView .artGroup article.i4 .texts{
-    position: absolute;
-    bottom: 80px;
-    left: 0;
-}
-div.portfolio .artView .artGroup article.i5 .image{
-    background-image: url(../image/porti5.jpg);
-    border-radius: 200px 0 200px 0;
-}    
-div.portfolio .artView .artGroup article.i5 .texts{
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-div.portfolio .artView .artGroup article.i6 .image{
-    background-image: url(../image/porti1.jpg);
-    border-radius: 0 0 200px 0;
-   
-}
-div.portfolio .artView .artGroup article.i6 .texts{
-    position: absolute;
-    bottom: 80px;
-    left: 0;
-}
-div.portfolio .artView .artGroup article.i7 .image{
-    background-image: url(../image/porti1.jpg);
-    border-radius: 200px 0 200px 0;
 
-}
-div.portfolio .artView .artGroup article.i7 .texts{
-    position: absolute;
+div.portfolio .artView .artGroup article:nth-child(odd) .texts{
     top: 0;
     left: 0;
 }
+div.portfolio .artView .artGroup article:nth-child(even) .texts{
+    bottom: 0;
+}
+
 div.portfolio .artView .artGroup article .texts{
     height: 0;
+    position: absolute;
     transition: height 0.8s;
 }
 div.portfolio .artView .artGroup article:hover .texts{
-    height: 400px;
+    height: 70vh;
     width: 90%;
     background-color: rgba(255,255,255,0.9);
     margin:auto;
@@ -491,11 +407,12 @@ div.portfolio .artView .artGroup article:hover .texts{
 }
 
 div.portfolio .artView .artGroup article .texts h2{
-    font-family:'Amatic SC';
+    
     font-weight: 700;
-    font-size: 25px;
-    line-height: 80px;
+    line-height: 8rem;
     text-align: center;
+    font-size: 2rem;
+    text-transform: capitalize;
 }
 div.portfolio .artView .artGroup article .texts ul{
     opacity: 0;
@@ -508,6 +425,7 @@ div.portfolio .artView .artGroup article .texts .btns{
 }
 div.portfolio .artView .artGroup article:hover .texts h2{
     font-weight: 700;
+    
 }
 div.portfolio .artView .artGroup article:hover .texts ul{
     opacity: 1;
@@ -516,7 +434,8 @@ div.portfolio .artView .artGroup article:hover .texts ul{
     list-style: square;
 }
 div.portfolio .artView .artGroup article .texts ul li{
-    line-height: 30px;
+    line-height: 3rem;
+    font-size: 1.7rem;
 }
 div.portfolio .artView .artGroup article:hover .texts .btns{
     opacity: 1;
@@ -530,7 +449,7 @@ div.portfolio .artView .artGroup article:hover .texts .btns .btn{
     background-color: #999;
     color: #fff;
     text-transform: uppercase;
-    line-height: 40px;
+    line-height: 4rem;
 }
 
 div.portfolio .artBtns{
@@ -586,9 +505,8 @@ div.ftrWrap footer{
     position: fixed;
     bottom: 20px; left: 0;right: 0;
     text-align: center;
-    font-family: 'Amatic SC';
     font-weight: 700;
-    font-size: 30px;
+  
     z-index: 999;
 }
 div.ftrWrap footer h2{

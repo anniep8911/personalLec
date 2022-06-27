@@ -37,7 +37,7 @@ $(function(){
     }
 
     //전처리
-    $dropP.find('h3').css({fontSize:'25px', height:'100px', marginTop:'200px'});
+    // $dropP.find('h3').css({fontSize:'25px', height:'100px', marginTop:'200px'});
     
     //이벤트
     $dropArt.on('click',zIndex);
@@ -67,7 +67,7 @@ $(function(){
         $dropArt.removeClass('show');
         $(this).addClass('show');
         $dropP.find('h3').text('오른쪽에서 아이콘을 드래그하여 여기에 드롭해주세요.!')
-        $dropP.find('h3').css({fontSize:'25px', height:'100px', marginTop:'200px'});
+        // $dropP.find('h3').css({fontSize:'25px', height:'100px', marginTop:'200px'});
         $dropP.find('ul').css({display:'none'});
         $dropP.find('div').css({display:'none'});
         $dragP.find('.artWrap').removeClass('show');
@@ -88,7 +88,6 @@ $(function(){
     
     function skill(){
         //CSS세팅
-        $dropP.find('h3').css({fontSize:'60px', height:'80px', marginTop:0});
         $dropP.find('ul').css({display:'block'});
         $dropP.find('div').css({display:'block'});
         $dropP.find('.skill ul').css({listStyle:'square'});
@@ -119,7 +118,7 @@ $(function(){
 
    function tool(){
        //CSS세팅
-       $dropP.find('h3').css({fontSize:'60px', height:'80px', marginTop:0});
+
        $dropP.find('ul').css({display:'block'});
        $dropP.find('div').css({display:'block'});
        $dropP.find('.skill ul').css({listStyle:'square'});
