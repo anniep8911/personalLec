@@ -1,12 +1,14 @@
 //변수선언부
 $dtFz: 20px;
 $ddFz: 14px;
-$fontTitle: 'Amatic SC';
-$fontNote: 'Noto Sans KR';
+$fontTitle: 'Hi Melody';
+$fontNote: 'Hi Melody';
 $sigColor: #f3eee9;
 $breakpoint-mobile: 420px;
 $breakpoint-tablet: 780px;
 $breakpoint-desktop: 1920px;
+
+
 
 @mixin mobile {
     @media (min-width:0) and (max-width: #{$breakpoint-mobile}) {
@@ -22,6 +24,7 @@ $breakpoint-desktop: 1920px;
 
 @mixin wrapInner {
     width: 80%;
+    max-width: 500px;
     margin: 0 auto;
     padding-left: 20px;
     border-left: 2px solid black;
@@ -31,20 +34,22 @@ $breakpoint-desktop: 1920px;
 %header {
     border-left: 2px solid black;
     width: 80%;
+    max-width: 500px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     font-family: $fontTitle;
     font-weight: 700;
-    font-size: 48px;
+    font-size: 20px;
     padding-left: 20px;
     padding-top: 40px;
+    text-transform: uppercase;
     h1 {
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-left: -30px;
-        line-height: 80px;
+        line-height: 50px;
         &::before {
             display: block;
             content: '';
@@ -99,6 +104,7 @@ $breakpoint-desktop: 1920px;
 //전체 컬러
 body {
     background-color: $sigColor;
+    touch-action: pan-y;
 }
 //header
 div.hdrWrap {
@@ -119,7 +125,7 @@ div.mnWrap {
     @include wrapInner;
     main {
         section {
-            width: calc(100% - 200px);
+            width: 100%;
             position: relative;
             margin: 0 auto;
             border: 2px solid black;
@@ -155,6 +161,7 @@ div.careers {
                 padding: 0;
                 background-color: #000;
                 width: 100%;
+                font-weight: 700;
                 h2 {
                     line-height: 40px;
                     font-family: $fontTitle;
@@ -278,8 +285,8 @@ div.portfolio {
             display: flex;
             justify-content: space-around;
             article {
-                width: calc(100% / 4 - 20px);
-                height: 320px;
+                width: calc(100% / 4 - 40px);
+                height: 500px;
                 border: 1px solid black;
                 position: relative;
                 a{
@@ -331,6 +338,7 @@ div.ftrWrap {
             font-weight: 500;
             line-height: 40px;
             margin-top: 20px;
+            font-weight: 700;
         }
         dd {
             font-size: 12px;
@@ -361,11 +369,13 @@ div.ftrWrap {
         justify-content: space-between;
         font-family: $fontTitle;
         font-weight: 500;
-        font-size: 35px;
+        font-size: 20px;
         padding-left: 20px;
         padding-top: 20px;
+        text-transform: uppercase;
         h1 {
             display: flex;
+            text-transform: uppercase;
             justify-content: space-between;
             align-items: center;
             margin-left: -30px;
